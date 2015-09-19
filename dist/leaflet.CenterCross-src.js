@@ -7,7 +7,7 @@
 	http://leafletjs.com
 	Original: https://github.com/gsi-cyberjapan/gsimaps
 */
-(function (window, document, undefined) {L.centerCrossVersion = '0.0.1';
+(function (window, document, undefined) {L.centerCrossVersion = '0.0.2';
 
 
 
@@ -18,15 +18,31 @@ L.CenterCross = L.Class.extend({
 		visible : true
 	},
 
-	initialize: function (map, options) {
+	initialize: function (options) {
 		options = L.setOptions(this, options);
-		this.map = map;
+	},
+
+	addTo: function (map) {
+		this.onAdd(map);
+		return this;
+	},
+
+	onAdd: function (map) {
+		this._map = map;
 		this.setVisible(this.options.visible);
+	},
+
+	onRemove: function (map) {
+		map.off('move', this.refresh, this);
+		if (this.marker) {
+			map.removeLayer(this.marker);
+			this.marker = null;
+		}
 	},
 
 	refresh: function () {
 		if (this.options.visible) {
-			var pos = this.map.getCenter();
+			var pos = this._map.getCenter();
 			if (!this.marker) {
 				var icon = L.icon({
 					iconUrl: 'data:image:png;base64,iVBORw0KGgoAAAANSUhEUgAAACMAAAAjCAYAAAAe2bNZAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAHVJREFUWMPt1rENgDAMRNEPi3gERmA0RmAERgmjsAEjhMY0dOBIWHCWTulOL5UN8VmACpRoUdcAU1v19SQaYYQRRhhhhMmIMV//9WGuG/xudmA6C+YApGUGgNF1b0KKjithhBFGGGGE+Rtm9XfL8CHzS8340hzaXWaR1yQVAAAAAABJRU5ErkJggg==',
@@ -42,12 +58,12 @@ L.CenterCross = L.Class.extend({
 					opacity: 0.8,
 					zIndexOffset: 0
 				});
-				this.marker.addTo(this.map);
+				this.marker.addTo(this._map);
 			} else {
 				this.marker.setLatLng(pos);
 			}
 		} else if (this.marker) {
-			this.map.removeLayer(this.marker);
+			this._map.removeLayer(this.marker);
 			this.marker = null;
 		}
 	},
@@ -55,11 +71,12 @@ L.CenterCross = L.Class.extend({
 	setVisible: function (on) {
 		this.options.visible = on;
 		if (this.options.visible) {
-			this.map.on('move', this.refresh, this);
+			this._map.on('move', this.refresh, this);
 		} else {
-			this.map.off('move', this.refresh, this);
+			this._map.off('move', this.refresh, this);
 		}
 		this.refresh();
+		return this;
 	},
 
 	getVisible: function () {
@@ -67,8 +84,8 @@ L.CenterCross = L.Class.extend({
 	}
 });
 
-L.centerCross = function (map, options) {
-	return new L.CenterCross(map, options);
+L.centerCross = function (options) {
+	return new L.CenterCross(options);
 };
 
 
@@ -89,7 +106,7 @@ L.Control.CenterCross = L.Control.extend({
 		this._map = map;
 
 		this._toggleButton = this._createButton(container, this);
-		this._centerCross = L.centerCross(this._map, {visible: this.options.show});
+		this._centerCross = L.centerCross({visible: this.options.show}).addTo(this._map);
 		this._updateButton();
 
 		return container;
@@ -105,6 +122,8 @@ L.Control.CenterCross = L.Control.extend({
 
 		L.DomEvent
 			.on(link, 'click', stop)
+			.on(link, 'mousedown', stop)
+			.on(link, 'dblclick', stop)
 			.on(link, 'click', L.DomEvent.preventDefault)
 			.on(link, 'click', this._toggle, context);
 
