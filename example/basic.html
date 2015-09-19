@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF8">
+    <title>Leaflet.CenterCross example</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.5/leaflet.css">
+    <link rel="stylesheet" href="../dist/leaflet.CenterCross.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.5/leaflet.js"></script>
+
+    <script src="../src/Leaflet.CenterCross.js"></script>
+
+    <script src="../src/CenterCrossMarker.js"></script>
+    <script src="../src/CenterCross.js"></script>
+    <script src="../src/Control.CenterCross.js"></script>
+
+  </head>
+  <body>
+    <div id="map" style="width: 100%; height: 500px;"></div>
+    <script>
+      var osmUrl = 'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
+        osmAttrib = '&copy; <a href="http://openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+        osm = L.tileLayer(osmUrl, {maxZoom: 18, attribution: osmAttrib}),
+        map = L.map('map', {layers: [osm], center: L.latLng(-37.7772, 175.2756), zoom: 15 });
+
+      var control = L.control.centerCross({show: true, position: "topright"});
+      map.addControl(control);
+
+    </script>
+  </body>
+</html>

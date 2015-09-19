@@ -1,0 +1,30 @@
+{
+  "name": "leaflet-center-cross",
+  "version": "0.0.1",
+  "description": "a plugin that adds cross image on center to Leaflet powered maps",
+  "devDependencies": {
+    "leaflet": "~0.7.0",
+    "jshint": "~2.3.0",
+    "uglify-js": "~2.4.3",
+    "jake": "~0.7.4"
+  },
+  "main": "dist/leaflet.CenterCross.js",
+  "directories": {
+    "example": "examples"
+  },
+  "scripts": {
+    "build": "jake"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/smellman/Leaflet.CenterCross.git"
+  },
+  "keywords": [
+    "maps",
+    "leaflet",
+    "client"
+  ],
+  "author": "Taro Matsuzawa",
+  "license": "BSD-2-Clause",
+  "readmeFilename": "README.md"
+}
