@@ -80,4 +80,4 @@ centerCross.setVisible(true);
 
 # TODO
 
-- [] rewrite factory of centerCross
+- [ ] rewrite factory of centerCross
