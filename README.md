@@ -77,3 +77,7 @@ centerCross.setVisible(true);
 |------|-------|-----------|
 |getVisible()|Boolean|Reterns true if center cross show in map.|
 |setVisible(< Boolean > *on*)|null|Update visible status|
+
+# TODO
+
+- [] rewrite factory of centerCross
