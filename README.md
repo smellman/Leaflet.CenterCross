@@ -52,31 +52,32 @@ map.addControl(control);
 
 # centerCross
 
-Used to put center cross object in center of map.
+Used to put center cross object in center of the map.
 
 ```javascript
-var centerCross = L.centerCross(map);
-centerCross.setVisible(true);
+var centerCross = L.centerCross();
+map.addLayer(centerCross);
 ```
 
 ## Creation
 
 |Factory|Description|
 |-------|-----------|
-|L.centerCross(<[Map ](http://leafletjs.com/reference.html#map-class)> *map*, <[CenterCross options](#centercross_options)> *options?*)|Create a center cross object and put in map.|
+|L.centerCross(<[CenterCross options](#centercross_options)> *options?*)|Creates a center cross object.|
 
 ## <a name="centercross_options"> Options
 
 |Option|Type|Default|Description|
 |------|----|-------|-----------|
-|visible|Boolean|true|If true, add center cross to map.|
+|visible|Boolean|true|If true, adds center cross to the map.|
 
 ## Methods
 
 |Method|Returns|Description|
 |------|-------|-----------|
-|getVisible()|Boolean|Reterns true if center cross show in map.|
-|setVisible(< Boolean > *on*)|null|Update visible status|
+|addTo(<[Map ](http://leafletjs.com/reference.html#map-class)> *map*)|this|Adds center cross to the map.|
+|getVisible()|Boolean|Reterns true if center cross shows in the map.|
+|setVisible(< Boolean > *on*)|this|Updates visible status|
 
 # TODO
 
