@@ -78,7 +78,3 @@ map.addLayer(centerCross);
 |addTo(<[Map ](http://leafletjs.com/reference.html#map-class)> *map*)|this|Adds center cross to the map.|
 |getVisible()|Boolean|Reterns true if center cross shows in the map.|
 |setVisible(< Boolean > *on*)|this|Updates visible status|
-
-# TODO
-
-- [ ] rewrite factory of centerCross
