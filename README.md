@@ -43,7 +43,7 @@ map.addControl(control);
 ## <a name="control_centercross_options"> Options
 
 |Option|Type|Default|Description|
-|------|-----------|-------------|
+|------|----|-------|-----------|
 |position|String|'topleft|See [Control Positions](http://leafletjs.com/reference.html#control-positions)|
 |toggleText|String|'C'|control's text|
 |toggleTitle|String|'Toggle Center Cross'|control's title, show on mouse over in control like tooltip|
@@ -68,12 +68,12 @@ centerCross.setVisible(true);
 ## <a name="centercross_options"> Options
 
 |Option|Type|Default|Description|
-|------|-----------|-------------|
+|------|----|-------|-----------|
 |visible|Boolean|true|If true, add center cross to map.|
 
 ## Methods
 
 |Method|Returns|Description|
-|------|------|-----------|
+|------|-------|-----------|
 |getVisible()|Boolean|Reterns true if center cross show in map.|
 |setVisible(< Boolean > *on*)|null|Update visible status|
