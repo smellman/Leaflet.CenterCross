@@ -10,20 +10,20 @@ L.CenterCross = L.Class.extend({
 		options = L.setOptions(this, options);
 	},
 
-	addTo: function(map) {
+	addTo: function (map) {
 		this.onAdd(map);
 		return this;
 	},
 
-	onAdd: function(map) {
+	onAdd: function (map) {
 		this._map = map;
 		this.setVisible(this.options.visible);
 	},
 
-	onRemove: function(map) {
-		this._map.off('move', this.refresh, this);
+	onRemove: function (map) {
+		map.off('move', this.refresh, this);
 		if (this.marker) {
-			this._map.removeLayer(this.marker);
+			map.removeLayer(this.marker);
 			this.marker = null;
 		}
 	},
