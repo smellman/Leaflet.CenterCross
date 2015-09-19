@@ -22,7 +22,8 @@
         osm = L.tileLayer(osmUrl, {maxZoom: 18, attribution: osmAttrib}),
         map = L.map('map', {layers: [osm], center: L.latLng(-37.7772, 175.2756), zoom: 15 });
 
-      var centerCross = L.centerCross(map);
+      var centerCross = L.centerCross();
+      map.addLayer(centerCross);
     </script>
   </body>
 </html>

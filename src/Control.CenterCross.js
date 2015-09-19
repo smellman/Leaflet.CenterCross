@@ -15,7 +15,7 @@ L.Control.CenterCross = L.Control.extend({
 		this._map = map;
 
 		this._toggleButton = this._createButton(container, this);
-		this._centerCross = L.centerCross(this._map, {visible: this.options.show});
+		this._centerCross = L.centerCross({visible: this.options.show}).addTo(this._map);
 		this._updateButton();
 
 		return container;
@@ -31,6 +31,8 @@ L.Control.CenterCross = L.Control.extend({
 
 		L.DomEvent
 			.on(link, 'click', stop)
+			.on(link, 'mousedown', stop)
+			.on(link, 'dblclick', stop)
 			.on(link, 'click', L.DomEvent.preventDefault)
 			.on(link, 'click', this._toggle, context);
 
