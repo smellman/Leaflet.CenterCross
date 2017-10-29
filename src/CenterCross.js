@@ -1,5 +1,5 @@
 
-L.CenterCross = L.Class.extend({
+L.CenterCross = L.Layer.extend({
 
 	marker : null,
 	options : {

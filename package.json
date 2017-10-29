@@ -1,12 +1,12 @@
 {
   "name": "leaflet-center-cross",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "description": "a plugin that adds cross image on center to Leaflet powered maps",
   "devDependencies": {
-    "leaflet": "~0.7.0",
+    "leaflet": "~1.2.0",
     "jshint": "~2.3.0",
     "uglify-js": "~2.4.3",
-    "jake": "~0.7.4"
+    "jake": "~8.0.15"
   },
   "main": "dist/leaflet.CenterCross.js",
   "directories": {

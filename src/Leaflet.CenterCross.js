@@ -1,1 +1,1 @@
-L.centerCrossVersion = '0.0.2';
+L.centerCrossVersion = '0.0.3';

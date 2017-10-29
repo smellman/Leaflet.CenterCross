@@ -7,11 +7,11 @@
 	http://leafletjs.com
 	Original: https://github.com/gsi-cyberjapan/gsimaps
 */
-(function (window, document, undefined) {L.centerCrossVersion = '0.0.2';
+(function (window, document, undefined) {L.centerCrossVersion = '0.0.3';
 
 
 
-L.CenterCross = L.Class.extend({
+L.CenterCross = L.Layer.extend({
 
 	marker : null,
 	options : {
