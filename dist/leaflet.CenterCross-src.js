@@ -7,7 +7,7 @@
 	http://leafletjs.com
 	Original: https://github.com/gsi-cyberjapan/gsimaps
 */
-(function (window, document, undefined) {L.centerCrossVersion = '0.0.6';
+(function (window, document, undefined) {L.centerCrossVersion = '0.0.8';
 
 
 

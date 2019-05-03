@@ -15,7 +15,7 @@ https://github.com/Leaflet/Leaflet.draw
 include javascript.
 
 ```html
-<script src="../dist/leaflet.CenterCross.js"></script>
+<script src="https://unpkg.com/leaflet-center-cross@0.0.8/dist/leaflet.CenterCross.js"></script>
 ```
 
 add follow code:

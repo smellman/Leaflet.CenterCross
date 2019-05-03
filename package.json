@@ -1,6 +1,6 @@
 {
   "name": "leaflet-center-cross",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "a plugin that adds cross image on center to Leaflet powered maps",
   "devDependencies": {
     "jake": "~8.0.15",
