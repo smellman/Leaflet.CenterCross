@@ -4,7 +4,7 @@
   "description": "a plugin that adds cross image on center to Leaflet powered maps",
   "devDependencies": {
     "jake": "~8.0.15",
-    "jshint": "~2.3.0",
+    "jshint": "^2.10.2",
     "leaflet": "^1.3.1",
     "uglify-js": "^3.3.24"
   },
